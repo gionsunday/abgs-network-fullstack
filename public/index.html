@@ -12,6 +12,11 @@
 
   <title>Abundance Spring Gospel Network </title>
 
+  <!-- Axios  -->
+  
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -22,13 +27,7 @@
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-  <!--
-
- Mo 576 Abundance Spring Gospel Network
-
  
-
--->
 </head>
 
 <body>
@@ -505,28 +504,28 @@
             <img src="assets/images/newsletter.png" style="width:100px; height: 80px;" alt="">
             <div id="news-items">
               <label>First Name: *</label>
-              <input type="text" name="first" id="firstname" class="input" placeholder="Your firstname">
+              <input type="text" name="first" id="news_f_name" class="input" placeholder="Your firstname">
               <label>Last Name: * </label>
-              <input type="text" name="last" id="lastname" class="input" placeholder="Your lastname">
+              <input type="text" name="last" id="news_l_name" class="input" placeholder="Your lastname">
               <label>Email: * </label>
-              <input type="email" name="email" id="email" placeholder="Your Email">
+              <input type="email" name="email" id="news_email" placeholder="Your Email">
             </div>
           </div>
           <div style="padding:1em;">
             <p>In addition to general emails, I would also like to receive...</p>
             <span>
               <ul>
-                <li> <input type="checkbox" name="" id=""> <span>Digging Deep</span> </li>
-                <li> <input type="checkbox" name="" id=""> <span>Livestream Alerts</span> </li>
-                <li> <input type="checkbox" name="" id=""> <span>Burning Question and Answer Episodes</span> </li>
-                <li> <input type="checkbox" name="" id=""> <span> Weekly Blog Posts</span> </li>
-                <li> <input type="checkbox" name="" id=""> <span> Info’s on Special Invents</span> </li>
+                <li> <input type="checkbox" type="checkbox"  name="digging_deep" id="digging_deep" > <span>Digging Deep</span> </li>
+                <li> <input type="checkbox" name="Livestream Alerts" id="livestream_alerts"> <span>Livestream Alerts</span> </li>
+                <li> <input type="checkbox" name="Burning Question and Answer Episodes" id="burning_question"> <span>Burning Question and Answer Episodes</span> </li>
+                <li> <input type="checkbox" name="Weekly Blog Posts" id="blog_posts"> <span> Weekly Blog Posts</span> </li>
+                <li> <input type="checkbox" name="Info’s on Special Invents" id="invents"> <span> Info’s on Special Invents</span> </li>
 
               </ul>
             </span>
           </div>
           <div class="border-button" style="text-align: center;">
-            <a href="#">Subscribe Now</a>
+            <button class="btn" id="newssubmitbtn">Subscribe Now</buttton>
           </div>
         </div>
 
@@ -694,6 +693,7 @@
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/newletter.js"></script>
 
 </body>
 
