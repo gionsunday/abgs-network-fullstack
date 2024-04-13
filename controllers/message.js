@@ -31,21 +31,14 @@ const createNewMessage = async (req, res) => {
   const mailOptions1 = {
     from: process.env.MAILER_EMAIL,
     to: email,
-    subject: "Welcome On Board",
+    subject: "Thank You",
     html: `
         <body style="background-color:#fff; padding:5px; height:100%; width:100%>
         <div style="text-align:left; min-height:100vh; padding:20px">
         <img src="https:/" alt="logo" width="60" height="60"/>
-         <h2>Hi, ${name}. <br/> Thank you for subscribing to our news letter. </h2>
-        <p>Kindly note that you will be recieving occational contents from us based on your chosen options.</p> <br/> <br/>
-        <h4 style="color:aqua">Your Options </h4>
-        <ol>
-        <li>${digging_deep}</li>
-        <li>${burning_q_and_a}</li>
-        <li>${weeky_blogs}</li>
-        <li>${livestreams}</li>
-        <li>${special_events}</li>
-        </ol>
+         <h2>Hi, ${name}. <br/> Thank you for reaching out to us.</h2>
+        <p>Your message was recieved and it being review. You will get a reply from us shortly.</p> <br/> <br/>
+        
         <p>  For assistance  <a href="mailto:abundancespringgospelnetwork@gmail.com">PLEASE SEND US A MAIL</a></p>
         <br/>
         <br/>
@@ -59,7 +52,6 @@ const createNewMessage = async (req, res) => {
     if (error) {
       return res.json({ error: error });
     }
-
     res.status(StatusCodes.CREATED).json({ newMessage });
     console.log("Done!");
   });

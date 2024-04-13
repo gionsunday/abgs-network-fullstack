@@ -21,6 +21,16 @@ $(document).ready(() => {
         message: message.val(),
       });
       console.log(data);
+      
+    messageSendBtn.text("Message Sent!");
+    messageSendBtn.text("Thank You!");
+    messageName.val() = ""
+    messageEmail.val() = ""
+     messagePhone.val() = "" 
+      messageSubject.val() = ""
+       message: message.val() = ""
+       messageSendBtn.text("Send Message Now");
+
     } catch (error) {
       console.log(error);
     }
