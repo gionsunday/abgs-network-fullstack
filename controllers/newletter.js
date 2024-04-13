@@ -18,7 +18,7 @@ const getallnemail = async (req, res) => {
 };
 const getOnenemail = async (req, res) => {
   try {
-    const user = await User.findOne({email:req.body.email});
+    const user = await User.findOne({ email: req.body.email });
 
     res.status(StatusCodes.CREATED).json({ user });
   } catch (error) {
@@ -27,7 +27,7 @@ const getOnenemail = async (req, res) => {
 };
 const deleteOnenemail = async (req, res) => {
   try {
-    const user = await User.findOneAndDelete({email:req.body.email});
+    const user = await User.findOneAndDelete({ email: req.body.email });
 
     res.status(StatusCodes.CREATED).json({ user });
   } catch (error) {
@@ -35,11 +35,17 @@ const deleteOnenemail = async (req, res) => {
   }
 };
 
-
 const createNewsletterEmail = async (req, res) => {
   const user = await User.create({ ...req.body });
-  const { name, email, digging_deep, livestreams, burning_q_and_a, weeky_blogs, special_events } = req.body;
-  
+  const {
+    name,
+    email,
+    digging_deep,
+    livestreams,
+    burning_q_and_a,
+    weeky_blogs,
+    special_events,
+  } = req.body;
 
   var transporter1 = nodemailer.createTransport({
     service: "gmail",
@@ -98,9 +104,6 @@ const createNewsletterEmail = async (req, res) => {
         
          <h2>name: ${name}, <br/></h2>
          <h2>name: ${email}, <br/></h2>
-         
-  
-      
         </div>
         `,
   };
@@ -113,7 +116,6 @@ const createNewsletterEmail = async (req, res) => {
 };
 
 const generalUpdate = async (req, res, next) => {
- 
   try {
     const user = await User.findOneAndUpdate(
       { email: req.body.email },
@@ -124,7 +126,7 @@ const generalUpdate = async (req, res, next) => {
       },
     );
     if (!user) {
-      return res.json({error :`No transaction with email found 404`})
+      return res.json({ error: `No transaction with email found 404` });
     }
 
     res.status(StatusCodes.CREATED).json({ user });
@@ -139,5 +141,4 @@ module.exports = {
   createNewsletterEmail,
   generalUpdate,
   getOnenemail,
-  
 };
