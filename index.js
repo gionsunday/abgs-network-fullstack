@@ -17,6 +17,7 @@ const connectDB = require("./db/dbCon");
 //routes
 const newletterRouter = require("./routes/NewsRoutes");
 const messageRouter = require("./routes/messageRoute");
+const prayerRouter = require("./routes/prayerRoute");
 
 app.use("/", express.static(path.join(__dirname, "public")));
 app.use(express.json());
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/absg/newsletter", newletterRouter);
+app.use("/absg/prayers", prayerRouter);
 app.use("/absg/messages", messageRouter);
 
 //errorhandllers

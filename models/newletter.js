@@ -16,7 +16,7 @@ for (let i = 0; i < string_length; i++) {
   }
 }
 
-const UserSchema = new mongoose.Schema(
+const NewsletterSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -31,35 +31,29 @@ const UserSchema = new mongoose.Schema(
       required: [true, "please provide an email"],
       maxlength: [50, "name must not be greater than 20 characters"],
     },
-    
-    digging_deep:{
-      type: String,
-      trim: true,
-    },
-    livestreams:{
-      type: String,
-      trim: true,
-    },
-    burning_q_and_a:{
-      type: String,
-      trim: true,
-    },
-    weeky_blogs:{
-      type: String,
-      trim: true,
-    },
-    special_events:{
-      type: String,
-      trim: true,
-    }
 
-    
-      },
+    digging_deep: {
+      type: String,
+      trim: true,
+    },
+    livestreams: {
+      type: String,
+      trim: true,
+    },
+    burning_q_and_a: {
+      type: String,
+      trim: true,
+    },
+    weeky_blogs: {
+      type: String,
+      trim: true,
+    },
+    special_events: {
+      type: String,
+      trim: true,
+    },
+  },
   { timestamps: true },
 );
 
-
-
-
-
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("Newsletter", NewsletterSchema);
